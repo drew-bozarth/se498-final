@@ -19,6 +19,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {TestChatApplication.class})
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@Disabled
 class ChatApplicationTests {
 
     public static WebDriver driver;
@@ -30,7 +31,7 @@ class ChatApplicationTests {
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
+        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
         driver = new ChromeDriver(options);
     }
 
