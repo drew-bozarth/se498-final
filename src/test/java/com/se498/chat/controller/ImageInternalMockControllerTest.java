@@ -33,7 +33,7 @@ public class ImageInternalMockControllerTest {
     static void init(){
 
         headers = new HttpHeaders();
-        headers.setBasicAuth("sergey", "chapman");
+        headers.setBasicAuth("drew", "chapman");
     }
 
     @Test

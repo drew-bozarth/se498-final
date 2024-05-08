@@ -29,7 +29,7 @@ public class ImageExternalMockControllerTest {
         ExtractableResponse<Response> response = RestAssured
                 .given()
                 .filter(new RequestLoggingFilter())
-                .auth().basic("sergey", "chapman")
+                .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
                 .get("https://66122b1595fdb62f24ee293b.mockapi.io/image/1")

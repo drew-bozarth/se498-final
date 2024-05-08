@@ -31,15 +31,29 @@ public class MessageService {
     public ChatMessage addMessage(ChatMessage message) {
 
         //TODO: Save original message in the database
+        if(message.getMessageId() == null){
+            message.setMessageId(UUID.randomUUID().toString());
+        }
+
+        ChatMessage savedMessage = this.messageRepository.save(message);
+
+        //ChatMessage savedMessage = messageRepository.save(message);
         //TODO: Call AI service to visualize original message
+        String originalMessageVisualization = aiService.visualizeText(message.getMessageText());
+        ChatMessage originalChatMessageVisualization = new ChatMessage(UUID.randomUUID().toString(), "User", originalMessageVisualization, seed);
         //TODO: Save original message visualization in the database
-
+        messageRepository.save(originalChatMessageVisualization);
         //TODO: Call AI service to get response to the message
+        String responseText = aiService.askQuestion(seed, "User", message.getMessageText(), null);
         //TODO: Save response in the database
+        ChatMessage responseMessage = new ChatMessage(UUID.randomUUID().toString(), "System", responseText, seed);
+        messageRepository.save(responseMessage);
         //TODO: Call AI service to visualize response
+        String responseVisualization = aiService.visualizeText(responseText);
+        ChatMessage responseChatMessageVisualization = new ChatMessage(UUID.randomUUID().toString(), "System", responseVisualization, seed);
         //TODO: Save visualized response in the database
-
-        return null;
+        messageRepository.save(responseChatMessageVisualization);
+        return savedMessage;
     }
 
     public List<ChatMessage> getChatMessages() {
@@ -54,6 +68,8 @@ public class MessageService {
 
     public ChatMessage getMessage(String id){
         //TODO: Implement retrieving message from database
-        return null;
+        Optional<ChatMessage> optionalMessage = messageRepository.findById(id);
+        return optionalMessage.orElse(null);
+        //return messageRepository.findByID(id).get();
     }
 }

@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.se498.chat.model.Image;
+import com.se498.chat.model.ChatMessage;
 
 import java.util.Collection;
 
@@ -38,7 +39,7 @@ public class APIController {
     @Operation(summary = "Retrieve All Images", tags = {"images"})
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = {
-                    @Content(schema = @Schema(implementation = ChatMessage.class), mediaType = "application/json")}),
+                    @Content(schema = @Schema(implementation = Image.class), mediaType = "application/json")}),
             @ApiResponse(responseCode = "204", description = "There are no images", content = {
                     @Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
@@ -60,20 +61,42 @@ public class APIController {
     }
 
     //TODO: Implement Create Message API
+    @Operation(summary = "Create Message", tags = {"messages"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = ChatMessage.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
+    @PostMapping("/message")
     public ChatMessage createMessage(@RequestBody ChatMessage chatMessage) {
         //TODO: Implement creating message through the service
-        return null;
+        return messageService.addMessage(chatMessage);
     }
     //TODO: Implement Get Message API
+    @Operation(summary = "Retrieve Message By Id", tags = {"messages"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = ChatMessage.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "204", description = "There is no messages with such id", content = {
+                    @Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
+    @GetMapping("/message/{id}")
     public ChatMessage getMessage(@PathVariable String id) {
         //TODO: Implement getting message from the service
-        return null;
+        return messageService.getMessage(id);
     }
 
     //TODO: Implement Get Messages API
+    @Operation(summary = "Retrieve All Messages", tags = {"messages"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = ChatMessage.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "204", description = "There are no messages", content = {
+                    @Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
+    @GetMapping("/messages")
     public Collection<ChatMessage> getMessages() {
         //TODO: Implement getting all messages from the service
-        return null;
+        return messageService.getChatMessages();
     }
 
 }

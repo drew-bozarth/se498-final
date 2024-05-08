@@ -59,6 +59,14 @@ public class AIService {
                 DEFAULT_MAX_TOKENS, seed);
 
         //TODO: Call ChatGPT Service
+        //HttpHeaders headers = new HttpHeaders();
+        //headers.setBearerAuth(openaiApiKey);
+        //headers.setContentType(MediaType.APPLICATION_JSON);
+
+        //HttpEntity<ChatRequest> requestEntity = new HttpEntity<>(request, headers);
+        
+        //ResponseEntity<ChatResponse> responseEntity = restTemplate.exchange(DEFAULT_API_URL, HttpMethod.POST, requestEntity, ChatResponse.class);
+        //ChatResponse response = responseEntity.getBody();
         ChatResponse response = null;
 
         assert response != null;

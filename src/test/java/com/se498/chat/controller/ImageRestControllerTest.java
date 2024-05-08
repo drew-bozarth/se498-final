@@ -53,7 +53,7 @@ public class ImageRestControllerTest {
         ExtractableResponse<Response> response = RestAssured
                 .given()
                 .filter(new RequestLoggingFilter())
-                .auth().basic("sergey", "chapman")
+                .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
                 .get("http://localhost:" + 1090 + "/image/1")

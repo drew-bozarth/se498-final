@@ -22,7 +22,7 @@ class AuthTest {
         RestAssured
                 .given()
                 .filter(new RequestLoggingFilter())
-                .auth().basic("sergey", "chapman")
+                .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
                 .get("http://localhost:" + port + "/image/1")
