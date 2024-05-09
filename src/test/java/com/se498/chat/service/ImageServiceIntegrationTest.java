@@ -14,7 +14,6 @@ public class ImageServiceIntegrationTest {
     @Autowired
     private ImageService imageService;
 
-    @Disabled // Disabling my written tests for now
     @Test
     public void testImageService() {
 
