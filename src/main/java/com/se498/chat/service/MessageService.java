@@ -35,7 +35,7 @@ public class MessageService {
         //TODO: Call AI service to visualize original message
         String originalMessageVisualization = aiService.visualizeMessage(message.getMessageText());
         //TODO: Save original message visualization in the database
-        savedMessage.setVisualizedContent(visualizedMessage);
+        savedMessage.setVisualizedContent(originalMessageVisualization);
         messageRepository.save(savedMessage);
         //ChatMessage originalChatMessageVisualization = new ChatMessage(UUID.randomUUID().toString(), "User", originalMessageVisualization, seed);
         //messageRepository.save(originalChatMessageVisualization);
@@ -47,19 +47,19 @@ public class MessageService {
         //TODO: Save response in the database
         ChatMessage responseMessage = new ChatMessage();
         responseMessage.setUsername("AI");
-        responseMessage.setMessageText(response);
+        responseMessage.setMessageText(responseText);
         responseMessage.setSeed(seed);
         ChatMessage savedResponseMessage = messageRepository.save(responseMessage);
         //ChatMessage responseMessage = new ChatMessage(UUID.randomUUID().toString(), "System", responseText, seed);
         //messageRepository.save(responseMessage);
 
         //TODO: Call AI service to visualize response
-        String responseVisualization = aiService.visualizeText(response);
+        String responseVisualization = aiService.visualizeMessage(responseText);
 
         //TODO: Save visualized response in the database
         savedResponseMessage.setVisualizedContent(responseVisualization);
         messageRepository.save(savedResponseMessage);
-        
+
         return savedMessage;
     }
 

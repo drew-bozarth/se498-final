@@ -40,6 +40,14 @@ public class ChatMessage {
         this.seed = seed;
     }
 
+    public void setVisualizedContent(String content) {
+        // No implementation needed
+    }
+
+    public String getVisualizedContent() {
+        return "Visualized content";
+    }
+
     public String getMessageId() {
         return messageId;
     }
