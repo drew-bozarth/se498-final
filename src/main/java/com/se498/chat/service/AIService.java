@@ -53,7 +53,7 @@ public class AIService {
 
         ChatRequest request = new ChatRequest(
                 GPT_MODEL,
-                List.of(new SimpleMessage ("system", ((context == null) ? DEFAULT_CONTEXT : context)), new SimpleMessage(actor, question)),
+                List.of(new SimpleMessage ("system", ((context == null) ? DEFAULT_CONTEXT : context)), new SimpleMessage("user", question)),
                 DEFAULT_MAX_COMPLETIONS,
                 DEFAULT_TEMPERATURE,
                 DEFAULT_MAX_TOKENS, seed);
