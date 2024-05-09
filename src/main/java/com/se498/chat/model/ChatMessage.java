@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import lombok.*;
 import jakarta.persistence.Id;
 import java.util.Objects;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,14 +18,35 @@ public class ChatMessage {
     //TODO: Implement Persistent Entity requirements
     @Id
     private String messageId;
-    @NonNull
-    @Column
+    //@NonNull
+    //@Column
     private String username;
-    @NonNull
-    @Column
+    //@NonNull
+    //@Column
     private String messageText;
-    
     private int seed;
+
+    public ChatMessage() {
+        this.messageId = UUID.randomUUID().toString();
+        this.username = "";
+        this.messageText = "";
+        this.seed = 0;
+    }
+
+    public ChatMessage(String username, String messageText, int seed) {
+        this.messageId = UUID.randomUUID().toString();
+        this.username = username;
+        this.messageText = messageText;
+        this.seed = seed;
+    }
+
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
+    }
 
     @Override
     public boolean equals(Object o) {

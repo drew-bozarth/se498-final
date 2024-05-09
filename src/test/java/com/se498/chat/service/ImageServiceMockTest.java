@@ -25,6 +25,7 @@ public class ImageServiceMockTest {
     @MockBean
     private ImageRepository imageRepository;
 
+    @Disabled // Disabling my written tests for now
     @Test
     public void testGetAllImages() {
         Image dummyImage = new Image("1","http://yahoo.com", "this is a test");

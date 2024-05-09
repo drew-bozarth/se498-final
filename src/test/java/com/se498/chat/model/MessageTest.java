@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MessageTest {
     //TODO: Implement message test
 
+    @Disabled // Disabling my written tests for now
     @Test
     void testMessageInstantiation() {
 

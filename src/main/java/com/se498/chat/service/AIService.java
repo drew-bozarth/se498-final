@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.http.*;
 import java.util.List;
 
 @Service
@@ -58,20 +57,30 @@ public class AIService {
                 DEFAULT_MAX_COMPLETIONS,
                 DEFAULT_TEMPERATURE,
                 DEFAULT_MAX_TOKENS, seed);
+        // Call ChatGPT Service
+        return callChatGPTService(request).getChoices().get(0).getMessage().getContent();
+    }
 
-        //TODO: Call ChatGPT Service
-        HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(openaiApiKey);
-        headers.setContentType(MediaType.APPLICATION_JSON);
+    private ChatResponse callChatGPTService(ChatRequest request) {
+        String url = DEFAULT_API_URL + "/chat/completions";
+        return restTemplate.postForObject(url, request, ChatResponse.class);
+    }
 
-        HttpEntity<ChatRequest> requestEntity = new HttpEntity<>(request, headers);
-        
-        ResponseEntity<ChatResponse> responseEntity = restTemplate.exchange(DEFAULT_API_URL, HttpMethod.POST, requestEntity, ChatResponse.class);
-        ChatResponse response = responseEntity.getBody();
-        //ChatResponse response = null;
+    public String visualizeMessage(String message) {
+        String url = DEFAULT_API_URL + "/chat/completions";
+        ChatRequest request = new ChatRequest(
+                GPT_MODEL,
+                List.of(new SimpleMessage("user", message)),
+                DEFAULT_MAX_COMPLETIONS,
+                DEFAULT_TEMPERATURE,
+                DEFAULT_MAX_TOKENS, 0);
 
-        assert response != null;
+        String imageUrl = restTemplate.postForObject(url, request, String.class);
+        return imageUrl;
+    }
 
-        return response.getChoices().get(0).getMessage().getContent();
+    public String visualizeQuestion(int seed, String actor, String question, String context) {
+        String response = askQuestion(seed, "user", question, context);
+        return visualizeMessage(response);
     }
 }

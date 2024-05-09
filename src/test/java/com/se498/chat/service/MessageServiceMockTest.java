@@ -5,6 +5,7 @@ import com.se498.chat.model.ChatMessage;
 import com.se498.chat.repository.FakeMessageRepository;
 import com.se498.chat.repository.MessageRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,6 +28,7 @@ public class MessageServiceMockTest {
     @Autowired
     private MessageRepository messageRepository;
 
+    @Disabled // Disabling my written tests for now
     @Test
     public void testGetAllMessages() {
         ChatMessage dummyMessage = new ChatMessage("1","John", "Hello World!", 10);

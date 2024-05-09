@@ -12,7 +12,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.se498.chat.model.Image;
-import com.se498.chat.model.ChatMessage;
 
 import java.util.Collection;
 
