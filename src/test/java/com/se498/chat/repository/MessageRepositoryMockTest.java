@@ -3,6 +3,7 @@ package com.se498.chat.repository;
 import com.se498.chat.TestChatApplication;
 import com.se498.chat.model.ChatMessage;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
