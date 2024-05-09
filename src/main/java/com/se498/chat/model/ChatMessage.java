@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Getter
 @Setter
 @ToString
