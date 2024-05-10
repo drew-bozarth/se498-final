@@ -32,7 +32,7 @@ public class FakeMessageRepository{
         return messages.size();
     }
 
-    public Optional<ChatMessage> findById(String id) {
+    public ChatMessage findById(String id) {
         return messages.stream()
                 .filter(message -> message.getMessageId().equals(id))
                 .findFirst()
