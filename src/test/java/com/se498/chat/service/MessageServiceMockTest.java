@@ -29,7 +29,7 @@ public class MessageServiceMockTest {
     @Autowired
     private MessageRepository messageRepository;
 
-    @Disabled // Disabling my written tests for now
+    //@Disabled // Disabling my written tests for now
     @Test
     public void testGetAllMessages() {
         ChatMessage dummyMessage = new ChatMessage("1","John", "Hello World!", 10);
