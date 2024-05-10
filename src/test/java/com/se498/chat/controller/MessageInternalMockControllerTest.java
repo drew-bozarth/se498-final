@@ -56,9 +56,14 @@ public class MessageInternalMockControllerTest {
     public void testCreateMessage() throws JSONException {
 
         String expectedJson = "{\"messageId\" : \"1\", \"username\" : \"mockUser\",  \"messageText\" : \"this is a test\", \"seed\" : 10}";
-        ChatMessage message = new ChatMessage("1","mockUser", "this is a test", 10);
+        ChatMessage testMessage = new ChatMessage();
+        testMessage.setMessageID("1");
+        testMessage.setUsername("mockUser");
+        testMessage.setMessageText("this is a test");
+        testMessage.setSeed(10);
+        //ChatMessage message = new ChatMessage("1","mockUser", "this is a test", 10);
 
-        HttpEntity<ChatMessage> request = new HttpEntity<>(message, headers);
+        HttpEntity<ChatMessage> request = new HttpEntity<>(testMessage, headers);
 
         ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + port + "/message", request, String.class);
         JSONAssert.assertEquals(expectedJson, response.getBody(),true);
