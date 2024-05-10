@@ -32,7 +32,11 @@ public class MessageServiceMockTest {
     //@Disabled // Disabling my written tests for now
     @Test
     public void testGetAllMessages() {
-        ChatMessage dummyMessage = new ChatMessage("1","John", "Hello World!", 10);
+        ChatMessage dummyMessage = new ChatMessage();
+        dummyMessage.setUsername("John");
+        dummyMessage.setMessageText("Hello World!");
+        dummyMessage.setSeed(10);
+        //ChatMessage dummyMessage = new ChatMessage("1","John", "Hello World!", 10);
 
         given(messageRepository.save(any(ChatMessage.class))).willReturn(dummyMessage);
         messageService.addMessage(dummyMessage);

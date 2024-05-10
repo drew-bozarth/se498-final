@@ -23,8 +23,13 @@ public class MessageRepositoryMockTest {
     @Test
     public void testMessageRepository(){
 
-        ChatMessage dummyMessage = new ChatMessage("1", "John", "Hello World!", 10);
+        ChatMessage dummyMessage = new ChatMessage();
+        dummyMessage.setUsername("John");
+        dummyMessage.setMessageText("Hello World!");
+        dummyMessage.setSeed(10);
+        dummyMessage.setMessageId("1");
+        //ChatMessage dummyMessage = new ChatMessage("1", "John", "Hello World!", 10);
         messageRepository.save(dummyMessage);
-        assertEquals (dummyMessage, messageRepository.findById("John").get());
+        assertEquals (dummyMessage, messageRepository.findByID("1").get());
     }
 }
