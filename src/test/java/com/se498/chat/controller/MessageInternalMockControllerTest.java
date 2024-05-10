@@ -57,7 +57,7 @@ public class MessageInternalMockControllerTest {
 
         String expectedJson = "{\"messageId\" : \"1\", \"username\" : \"mockUser\",  \"messageText\" : \"this is a test\", \"seed\" : 10}";
         ChatMessage testMessage = new ChatMessage();
-        testMessage.setMessageID("1");
+        testMessage.setMessageId("1");
         testMessage.setUsername("mockUser");
         testMessage.setMessageText("this is a test");
         testMessage.setSeed(10);
