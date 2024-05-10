@@ -34,20 +34,20 @@ public class MessageRepositoryMockTest {
         assertEquals("Hello World!", messages.get(0).getMessageText());
         assertEquals(10, messages.get(0).getSeed());
         // message 2
-        assertEquals("2", messages.get(0).getMessageId());
-        assertEquals("Foobar", messages.get(0).getMessageText());
-        assertEquals(20, messages.get(0).getSeed());
+        assertEquals("2", messages.get(1).getMessageId());
+        assertEquals("Foobar", messages.get(1).getMessageText());
+        assertEquals(20, messages.get(1).getSeed());
         // message 3
-        assertEquals("3", messages.get(0).getMessageId());
-        assertEquals("words", messages.get(0).getMessageText());
-        assertEquals(30, messages.get(0).getSeed());
+        assertEquals("3", messages.get(2).getMessageId());
+        assertEquals("words", messages.get(2).getMessageText());
+        assertEquals(30, messages.get(2).getSeed());
         // message 4
-        assertEquals("4", messages.get(0).getMessageId());
-        assertEquals("test message", messages.get(0).getMessageText());
-        assertEquals(40, messages.get(0).getSeed());
+        assertEquals("4", messages.get(3).getMessageId());
+        assertEquals("test message", messages.get(3).getMessageText());
+        assertEquals(40, messages.get(3).getSeed());
         // message 5
-        assertEquals("5", messages.get(0).getMessageId());
-        assertEquals("message test", messages.get(0).getMessageText());
-        assertEquals(50, messages.get(0).getSeed());
+        assertEquals("5", messages.get(4).getMessageId());
+        assertEquals("message test", messages.get(4).getMessageText());
+        assertEquals(50, messages.get(4).getSeed());
     }
 }
