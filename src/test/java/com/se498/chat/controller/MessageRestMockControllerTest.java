@@ -29,7 +29,7 @@ public class MessageRestMockControllerTest {
     public void setup() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
-    @Disabled // Disabling my written tests for now
+    //@Disabled // Disabling my written tests for now
     @Test
     public void testGetMessageById() throws Exception {
         mockMvc.perform(get("/message/1")).andExpect(status().isOk())
