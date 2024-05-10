@@ -59,7 +59,7 @@ public class MessageRestControllerTest {
                 .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
-                .get("http://localhost:" + 1090 + "/message/1")
+                .get("http://54.243.22.124:" + 1090 + "/message/1")
                 .then()
                 .statusCode(200)
                 .extract();

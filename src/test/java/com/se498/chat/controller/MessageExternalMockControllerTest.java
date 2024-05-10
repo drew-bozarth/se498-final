@@ -34,7 +34,7 @@ public class MessageExternalMockControllerTest {
                 .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
-                .get("http://localhost:8080/message/1")
+                .get("http://66122b1595fdb62f24ee293b.mockapi.io/message/1")
                 .then()
                 .statusCode(200)
                 .extract();
