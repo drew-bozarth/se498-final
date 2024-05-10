@@ -22,7 +22,7 @@ public class ChatMessage {
     @Column
     private String username;
     //@NonNull
-    @Column(length=1024)
+    @Column(length=2048)
     private String messageText;
     private int seed;
 
