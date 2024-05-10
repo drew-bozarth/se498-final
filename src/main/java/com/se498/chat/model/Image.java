@@ -18,6 +18,6 @@ public class Image {
     @Column
     private String url;
     @NonNull
-    @Column
+    @Column(length=1024)
     private String description;
 }

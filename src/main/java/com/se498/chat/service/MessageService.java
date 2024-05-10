@@ -41,7 +41,7 @@ public class MessageService {
         //messageRepository.save(originalChatMessageVisualization);
         
         //TODO: Call AI service to get response to the message
-        String responseText = aiService.askQuestion(seed, message.getUsername(), message.getMessageText(), null);
+        String responseText = aiService.askQuestion(seed, "user", message.getMessageText(), null);
         //String responseText = aiService.askQuestion(seed, "User", message.getMessageText(), null);
         
         //TODO: Save response in the database

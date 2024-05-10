@@ -19,10 +19,10 @@ public class ChatMessage {
     @Id
     private String messageId;
     //@NonNull
-    //@Column
+    @Column
     private String username;
     //@NonNull
-    //@Column
+    @Column(length=1024)
     private String messageText;
     private int seed;
 
