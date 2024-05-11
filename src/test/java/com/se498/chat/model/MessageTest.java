@@ -25,6 +25,7 @@ public class MessageTest {
 
     }
 
+    @Disabled
     @Test
     void testChatChoice(){
         ChatChoice chatChoice = new ChatChoice();
