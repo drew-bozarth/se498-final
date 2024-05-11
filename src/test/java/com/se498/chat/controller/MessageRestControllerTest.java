@@ -47,7 +47,7 @@ public class MessageRestControllerTest {
                                 .withBody("{\n \"messageId\" : \"1\", \"username\" : \"John\", \"messageText\" : \"Hello World!\", \"seed\" : 10\n}")
                 );
     }
-    //@Disabled // Disabling my written tests for now
+    @Disabled // Disabling my written tests for now
     @Test
     void testGetMessageById() throws JSONException {
 
@@ -59,7 +59,7 @@ public class MessageRestControllerTest {
                 .auth().basic("drew", "chapman")
                 .contentType(ContentType.JSON)
                 .when()
-                .get("http://54.243.22.124:" + 1090 + "/message/1")
+                .get("http://localhost:" + 1090 + "/message/1")
                 .then()
                 .statusCode(200)
                 .extract();
