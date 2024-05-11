@@ -26,10 +26,10 @@ public class MessageTest {
     @Test
     void testChatChoice(){
         ChatChoie chatChoice = new ChatChoice();
-        chatChoice.setIndex = 1;
+        chatChoice.setIndex(1);
         SimpleMessage simple = new SimpleMessage("user", "test");
         chatChoice.setSimpleMessage(simple);
-        assertEquals(chatChoice.getIndex, 1);
-        assertEquals(chatChoice.getSimpleMessage, simple);
+        assertEquals(1, chatChoice.getIndex());
+        assertEquals(simple, chatChoice.getSimpleMessage());
     }
 }
