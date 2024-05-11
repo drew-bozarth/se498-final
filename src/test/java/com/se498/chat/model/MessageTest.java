@@ -27,7 +27,7 @@ public class MessageTest {
 
     @Test
     void testChatChoice(){
-        ChatChoie chatChoice = new ChatChoice();
+        ChatChoice chatChoice = new ChatChoice();
         chatChoice.setIndex(1);
         SimpleMessage simple = new SimpleMessage("user", "test");
         chatChoice.setSimpleMessage(simple);
