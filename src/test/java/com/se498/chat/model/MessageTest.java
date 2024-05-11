@@ -1,4 +1,4 @@
-package com.se498.chat.model;
+package com.se498.chat.model.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
@@ -21,5 +21,14 @@ public class MessageTest {
                 () -> assertEquals("Hello World!", dummyMessage.getMessageText()),
                 () -> assertEquals(10, dummyMessage.getSeed()));
 
+    }
+
+    @Test
+    void testChatChoice(){
+        ChatChoie chatChoice = new ChatChoice();
+        chatChoice.setIndex = 1;
+        chatChoice.setSimpleMessage = "test";
+        assertEquals(chatChoice.getIndex, 1);
+        assertEquals(chatChoice.getSimpleMessage, "test");
     }
 }
