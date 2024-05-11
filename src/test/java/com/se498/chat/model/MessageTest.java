@@ -25,14 +25,5 @@ public class MessageTest {
 
     }
 
-    @Disabled
-    @Test
-    void testChatChoice(){
-        ChatChoice chatChoice = new ChatChoice();
-        chatChoice.setIndex(1);
-        SimpleMessage simple = new SimpleMessage("user", "test");
-        chatChoice.setSimpleMessage(simple);
-        assertEquals(1, chatChoice.getIndex());
-        assertEquals(simple, chatChoice.getSimpleMessage());
-    }
+    
 }
