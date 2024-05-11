@@ -3,6 +3,12 @@ package com.se498.chat.repository;
 import com.se498.chat.model.ChatMessage;
 import org.springframework.stereotype.Repository;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

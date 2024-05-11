@@ -1,6 +1,7 @@
 package com.se498.chat;
 
 import com.se498.chat.model.Image;
+import org.junit.jupiter.api.Test;
 import com.se498.chat.repository.ImageRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,12 @@ public class TestChatApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(TestChatApplication.class, args);
+    }
+
+    @Test
+    public void mainMethodRunsSuccessfully() {
+        // Test that the main method runs without throwing exceptions
+        TestChatApplication.main(new String[]{});
     }
 
     @Bean
