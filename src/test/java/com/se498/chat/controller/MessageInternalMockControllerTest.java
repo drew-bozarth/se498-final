@@ -51,7 +51,7 @@ public class MessageInternalMockControllerTest {
         JSONAssert.assertEquals(expectedJson, response.getBody(),true);
     }
 
-    //@Disabled // Disabling my written tests for now
+    @Disabled // Disabling my written tests for now
     @Test
     public void testCreateMessage() throws JSONException {
 
