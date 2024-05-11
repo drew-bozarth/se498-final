@@ -27,8 +27,9 @@ public class MessageTest {
     void testChatChoice(){
         ChatChoie chatChoice = new ChatChoice();
         chatChoice.setIndex = 1;
-        chatChoice.setSimpleMessage = "test";
+        SimpleMessage simple = new SimpleMessage("user", "test");
+        chatChoice.setSimpleMessage(simple);
         assertEquals(chatChoice.getIndex, 1);
-        assertEquals(chatChoice.getSimpleMessage, "test");
+        assertEquals(chatChoice.getSimpleMessage, simple);
     }
 }
