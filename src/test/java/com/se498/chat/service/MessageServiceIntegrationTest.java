@@ -16,7 +16,7 @@ public class MessageServiceIntegrationTest {
     @Autowired
     private MessageService messageService;
 
-    //@Disabled // Disabling my written tests for now
+    //@Disabled // disabled for SonarQube
     @Test
     public void testMessageService() {
 
