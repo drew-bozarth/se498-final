@@ -22,7 +22,7 @@ import org.springframework.http.*;
 @SpringBootTest(classes = TestChatApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MessageExternalMockControllerTest {
     //TODO: Implement external message mock controller test
-    //@Disabled // Disabling my written tests for now
+    @Disabled // Disabling my written tests for now
     @Test
     void testGetMessageById() throws JSONException {
 
